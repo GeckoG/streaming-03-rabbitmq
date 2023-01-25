@@ -15,9 +15,10 @@ conn = pika.BlockingConnection(pika.ConnectionParameters("LOCALHOST"))
 ch = conn.channel()
 # use the channel to declare a queue
 ch.queue_declare(queue="hello")
+messagetext = "What is happening"
 # use the channel to publish a message to the queue
-ch.basic_publish(exchange="", routing_key="hello", body="Hello World!")
+ch.basic_publish(exchange="", routing_key="hello", body=messagetext)
 # print a message to the console for the user
-print(" [x] Sent 'Hello World!'")
+print(" [x] Sent '" + messagetext +"'")
 # close the connection to the server
 conn.close()
