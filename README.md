@@ -38,6 +38,9 @@ Get started with RabbitMQ, a message broker, that enables multiple processes to 
 1. Run the file. 
 
 You'll need to fix an error in the program to get it to run.
+```diff
++ Looks like the error was due to an extra letter in 'localhost'
+```
 Once it runs and finishes, we can reuse the terminal.
 
 ## Version 1 - Execute the Consumer/Listener
@@ -47,6 +50,9 @@ Once it runs and finishes, we can reuse the terminal.
 
 You'll need to fix an error in the program to get it to run.
 Once it runs successfully, will it terminate on its own? How do you know? 
+```diff
++ The process just waits to receive messages, so it will not terminate unless we force it to.
+```
 As long as the process is running, we cannot use this terminal for other commands. 
 
 ## Version 1 - Open a New Terminal / Emit More Messages
@@ -57,6 +63,7 @@ As long as the process is running, we cannot use this terminal for other command
 1. Execute the script. 
 1. Watch what happens in the listening window.
 1. Do this several times to emit at least 3 different messages.
+![img](https://imgur.com/a/6dGNZZL)
 
 ## Version 1: Don't Repeat Yourself (DRY)
 
@@ -66,6 +73,9 @@ As long as the process is running, we cannot use this terminal for other command
 1. Fix this by introducting a variable to hold the message. 
     1. Use your variable when sending. 
     1. Use the variable again when displaying to the user. 
+```diff
++ Used a variable called 'messagetext'
+```
 
 To send a new message, you'll only make one change.
 Updating and improving code is called 'refactoring'. 
