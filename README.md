@@ -1,11 +1,3 @@
-```diff
-- text in red
-+ text in green
-! text in orange
-# text in gray
-@@ text in purple (and bold)@@
-```
-
 # streaming-03-rabbitmq
 
 Get started with RabbitMQ, a message broker, that enables multiple processes to communicate reliably through an intermediary
@@ -63,7 +55,7 @@ As long as the process is running, we cannot use this terminal for other command
 1. Execute the script. 
 1. Watch what happens in the listening window.
 1. Do this several times to emit at least 3 different messages.
-![img](https://imgur.com/a/6dGNZZL)
+
 
 ## Version 1: Don't Repeat Yourself (DRY)
 
@@ -90,20 +82,45 @@ and a consistent, reusable approach to building code.
 Each of the version 2 programs include an error as well. 
 
 1. Find the error and fix it. 
+```diff
++ localhostttt was used instead of localhost
+```
 1. Compare the structure of the version 2 files. 
+```diff
++ Version 2 files both use the 'if name == "main"' idiom.
++ They also both define reusable functions with arguments.
++ The receiver, which is more prone to errors, has a couple exception handlers.
+```
 1. Modify the docstrings on all your files.
 1. Include your name and the date.
 1. Imports always go at the top, just after the file docstring.
 1. Imports should be one per line - why?
+```diff
++ When errors arise, it tells you what line it is in. If all the imports
++ on the same line, it will be harder to know which one caused the error.
+```
 1. Then, define your functions.
 1. Functions are reuable logic blocks.
 1. Everything the function needs comes in through the arguments.
 1. A function may - or may not - return a value. 
 1. When we open a connection, we should close the connection. 
 1. Which of the 4 files will always close() the connection?
+```diff
++ v1_emit_message is the only one that will always close() connection.
++ The receivers both go indefinitely, while v2_emit_message only opens and
++ closes connection when the send_message function is called.
+```
 1. Search GitHub for if __name__ == "__main__":
 1. How many hits did you get? 
+```diff
++ 26Million code results and 1900 discussions
+```
 1. Learn and understand this common Python idiom.
+```diff
++ If I wanted to import this into another python script, I could call its
++ functions without executing the lines of code under that if statement.
++ Essentially, it allows the script to be executed both on its own and as a module
+```
 
 ## Reference
 
@@ -112,4 +129,4 @@ Each of the version 2 programs include an error as well.
 
 ## Multiple Terminals
 
-![Mac Example](screenshot.png)
+![img](Multiple_terminals.JPG)
