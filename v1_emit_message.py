@@ -1,8 +1,7 @@
 """
     This program sends a message to a queue on the RabbitMQ server.
 
-    Author: Denise Case
-    Date: January 14, 2023
+    Matt Goeckel, 26 January 2023
 
 """
 

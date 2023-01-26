@@ -1,8 +1,6 @@
 """
 
-Always customize this docstring. 
-
-Add your name, date, and a description of the program.
+    Matt Goeckel, 26 January 2023
 
 Listens for messages on the queue.
 This process runs continously. 
